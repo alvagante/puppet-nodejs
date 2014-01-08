@@ -17,7 +17,8 @@ class nodejs::params {
   ### Application related parameters
 
   $nodejs_package = $::operatingsystem ? {
-    /(?i:RedHat|CentOS|Scientific|Amazon|OEL|OracleLinux|Fedora)/ => 'nodejs-compat-symlinks',
+    /(?i:RedHat|Scientific|Amazon|OEL|OracleLinux|Fedora)/ => 'nodejs-compat-symlinks',
+    /(?:iCentOS)/ => 'nodejs',
     default                                                       => 'nodejs',
   }
 
